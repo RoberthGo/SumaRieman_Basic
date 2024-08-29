@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de Riemann</title>
+    <!-- Se importa una biblioteca Matematica para poder evaluar la funcion con mas facilidad -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.js"></script>
+    <!-- Se importa la libreria que ayudara a crear el grafico -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+<body>
+    <div class="container">
+        <h1>Suma de Riemann</h1>
+        <form id="riemann-form">
+            <label>Función f(x):</label>
+            <input type="text" id="function" required placeholder="Introduce la funcion a evaluar">
+            
+            <label>Límite inferior (a):</label>
+            <input type="number" id="a" required>
+            
+            <label>Límite superior (b):</label>
+            <input type="number" id="b" required>
+            
+            <label>Número inicial de rectángulos:</label>
+            <input type="number" id="n" required min="1" value="10">
+            
+            <button type="submit">Calcular</button>
+        </form>
+        
+        <div id="result"></div>
+        
+        <div class="graph-container">
+            <h2>GRAFICACIÓN</h2>
+            <div id="graph"></div>
+            <input type="range" id="rectangleSlider" min="1" max="500" value="10">
+            <div id="sliderValue">Rectángulos: 10</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
